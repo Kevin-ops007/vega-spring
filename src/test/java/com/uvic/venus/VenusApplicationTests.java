@@ -8,6 +8,12 @@ class VenusApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
+	}
+	
+	@Test
+	void contextLoads() {
+		
 	}
 
 }
