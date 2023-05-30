@@ -10,10 +10,4 @@ class VenusApplicationTests {
 	void contextLoads() {
 		
 	}
-	
-	@Test
-	void contextLoads2() {
-		
-	}
-
 }
