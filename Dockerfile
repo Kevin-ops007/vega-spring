@@ -8,7 +8,7 @@ COPY pom.xml .
 COPY src src
 
 RUN ./mvnw install -DskipTests
-RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../.mvn/wrapper/maven-wrapper.jar)
+RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 FROM openjdk:14.0.2
 VOLUME /tmp
