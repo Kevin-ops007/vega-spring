@@ -7,7 +7,7 @@ WORKDIR /workspace/app
 # COPY src src
 COPY . /
 
-RUN ./mvnw install -DskipTests
+# RUN ./mvnw install -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 FROM openjdk:14.0.2
