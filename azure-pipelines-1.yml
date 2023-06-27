@@ -38,6 +38,17 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: SonarQubePrepare@5
+      inputs:
+        SonarQube: 426sonarqubedns.westus.azurecontainer.io
+        #configMode: 'file' # 'file' | 'manual'. Required when scannerMode = CLI. Mode. Default: file.
+        #cliProjectKey: # string. Required when scannerMode = CLI && configMode = manual. Project Key. 
+        projectKey: SENG426_Group9# string. Required when scannerMode = MSBuild. Project Key. 
+        #cliSources: '.' # string. Required when scannerMode = CLI && configMode = manual. Sources directory root. Default: ..        
+    - task: SonarQubeAnalyze@5
+      inputs:
+        jdkversion: 'JAVA_HOME_11_X64'      
+   
     - task: SonarQubePublish@5
       inputs:
         pollingTimeoutSec: '300'
