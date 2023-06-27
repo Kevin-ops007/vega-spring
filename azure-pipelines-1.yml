@@ -8,6 +8,7 @@ trigger:
 
 resources:
 - repo: self
+sonarqube: 426sonarqubedns.westus.azurecontainer.io
 
 variables:
   # Container registry service connection established during pipeline creation
@@ -40,7 +41,7 @@ stages:
           $(tag)
     - task: SonarQubePrepare@5
       inputs:
-        SonarQube: 426sonarqubedns.westus.azurecontainer.io
+        SonarQube: sonarqube
         #configMode: 'file' # 'file' | 'manual'. Required when scannerMode = CLI. Mode. Default: file.
         #cliProjectKey: # string. Required when scannerMode = CLI && configMode = manual. Project Key. 
         projectKey: SENG426_Group9# string. Required when scannerMode = MSBuild. Project Key. 
