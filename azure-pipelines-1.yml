@@ -40,10 +40,10 @@ stages:
           $(tag)
     - task: SonarQubePrepare@5
       inputs:
-        SonarQube: 426sonarqubedns.westus.azurecontainer.io
+        SonarQube: http://mysonarqubedns2.eastus.azurecontainer.io:9000/
         #configMode: 'file' # 'file' | 'manual'. Required when scannerMode = CLI. Mode. Default: file.
         #cliProjectKey: # string. Required when scannerMode = CLI && configMode = manual. Project Key. 
-        projectKey: SENG426_Group9# string. Required when scannerMode = MSBuild. Project Key. 
+        projectKey: seng426group9vega-spring# string. Required when scannerMode = MSBuild. Project Key. 
         #cliSources: '.' # string. Required when scannerMode = CLI && configMode = manual. Sources directory root. Default: ..        
     - task: SonarQubeAnalyze@5
       inputs:
