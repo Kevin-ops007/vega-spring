@@ -49,9 +49,17 @@ stages:
           sonar.projectName=vega-spring
           sonar.projectKey=seng426group9vega-spring
 
-    - task: SonarQubeAnalyze@5
+    - task: Maven@4
       inputs:
-        jdkversion: 'JAVA_HOME_11_X64'
+        mavenPomFile: 'pom.xml'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: true
+        sqMavenPluginVersionChoice: 'latest'
     
     - task: SonarQubePublish@5
       inputs:
